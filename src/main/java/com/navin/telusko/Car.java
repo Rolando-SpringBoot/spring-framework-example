@@ -1,0 +1,29 @@
+package com.navin.telusko;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Car implements Vehicle {
+
+  @Autowired
+  private Tire tire;
+
+  public Car() {
+    System.out.println("car -> empty constructor");
+  }
+
+  public Tire getTire() {
+    return tire;
+  }
+
+  public void setTire(Tire tire) {
+    System.out.println("car -> set method tire");
+    this.tire = tire;
+  }
+
+  public void drive() {
+    System.out.println("car: " + tire);
+  }
+
+}
